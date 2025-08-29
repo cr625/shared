@@ -1,0 +1,38 @@
+# Unified LLM Orchestration Requirements
+
+# Core async libraries
+aiohttp>=3.9.0
+asyncio-timeout>=4.0.3
+
+# LLM Provider SDKs
+anthropic>=0.28.0  # Claude
+openai>=1.30.0     # OpenAI GPT models
+
+# Data handling and serialization
+pydantic>=2.0.0
+dataclasses-json>=0.6.0
+
+# Caching (optional - Redis support)
+redis>=5.0.0
+aioredis>=2.0.0
+
+# Ontology and semantic processing (for MCP server enhancements)
+rdflib>=7.0.0
+rdflib-jsonld>=0.6.1
+owlready2>=0.44
+pyshacl>=0.25.0
+
+# Natural language processing (for NL to SPARQL)
+spacy>=3.7.0
+# Run: python -m spacy download en_core_web_sm
+
+# Testing and development
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-mock>=3.11.0
+
+# Logging and monitoring
+structlog>=23.0.0
+
+# Type hints and validation
+typing-extensions>=4.0.0
