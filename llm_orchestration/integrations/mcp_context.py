@@ -72,7 +72,7 @@ class MCPContextManager:
         self._last_health_check = 0
         self._server_available = True
         
-        logger.info(f"MCP Context Manager initialized for: {server_url}")
+        # Note: Initialization logging handled by singleton function
     
     async def _get_session(self) -> aiohttp.ClientSession:
         """Get or create HTTP session."""
@@ -544,6 +544,7 @@ def get_mcp_context_manager(server_url: Optional[str] = None) -> MCPContextManag
     if _global_mcp_manager is None:
         url = server_url or os.environ.get("ONTSERVE_MCP_URL", "http://localhost:8082")
         _global_mcp_manager = MCPContextManager(url)
+        logger.info(f"MCP Context Manager singleton initialized for: {url}")
     return _global_mcp_manager
 
 
